@@ -1,0 +1,199 @@
+/* variable*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,400&display=swap');
+
+@import url(./variables.css);
+/* you can import another  css file into this one. This helps with organization if you're just defining things within this file and the actual cosmetics are out here.*/
+/* <!-- This creatss a style card--> */
+
+/*Resets*/
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+html, body {
+    height: 100%;
+
+}
+body{
+    display:flex;
+    flex-direction:column;
+}
+
+a {
+    color: #222
+}
+/*This makes the color of the links black*/
+/*Custom styles*/
+img {
+    max-width: 100%;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 5%;
+}
+
+header nav a {
+    margin-left: 5px;
+    text-decoration: none;
+    padding: 5px 8px;
+    border-radius: 3px;
+    transition: background-color 0.5s, text-decoration 2s;
+    position: relative;
+}
+/* The space between nav's About and Contact */
+
+header nav a:after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    width: 100%;
+    left: 0;
+    height: 5px;
+    background-color: var(--primary-color);
+    opacity: 0;
+    transition: opacity .5s;
+
+}
+/* Element sector */
+header nav a:hover {
+    text-decoration: underline;
+    background-color: #ddd;
+}
+/* This enacts the hover state with the mouse to make links get an underline. */
+header nav a:hover:after, header nav a:active:after{
+    opacity: 1;
+}
+
+header nav a.active {
+    background-color: #ddd;
+
+}
+
+header nav a.active:after{
+    opacity: .5;
+
+}
+
+figure {
+    display:flex;
+    margin-bottom:35px;
+
+}
+
+figure img{
+    width:45%;
+    flex:1;
+}
+
+figure figcaption{
+    flex:2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-color);
+}
+
+figure figcaption h3{
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+main{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    /* justify-content: center; */
+    flex:1; 
+    flex-wrap: wrap;
+    
+    /* This flex puts makes the  two sections take up more space*/
+}
+
+main article{
+    padding: 15px;
+    background-color:#444;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main article.main-article{
+    grid-column: 1 / 4;
+    padding: 90px 25px;
+
+}
+
+main article .article-content{
+    padding: 10px;
+    background-color: rgba(250, 250, 250, 1);
+    border-radius: 5px;
+}
+
+.logo-link{
+    text-decoration: none;
+}
+
+#logo{
+    color: var(--primary-color);
+}
+
+/* .chat{
+    position: fixed;
+    bottom: 35px;
+    right: 100px;
+    background-color: #000;
+    padding: 7px;
+    z-index: 100;
+    /* technically if there was something here, the chat
+    would be behind it if z index was (-). }*/ 
+footer{
+    display:flex;
+    /* a static height is not good, make sure to use the padding and margins */
+    justify-content: space-between;
+
+    padding: 30px 5%;
+}
+
+/* Responive style */
+@media (max-width: 600px) {
+    main{
+        flex-direction: column;
+    }
+    footer{
+        flex-direction: column;
+        align-items: center;
+        /* this makes them on top of each other when the screen is small */
+    }
+    footer p{
+        margin: 4px 0;
+    }
+}
+@media (min-width: 900px){
+    figure{
+        padding: 0 15%;
+    }
+    figcaption{
+        font-size: 2.5rem;
+    }
+    figcaption p {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    header{
+        padding: 8px 20%;
+    }
+    footer{
+        padding: 30px 20%;
+    }
+}
+
+/* <!-- Cascading, so the last class will be applied if there are multiple classes in a single declaration.--> */
+
