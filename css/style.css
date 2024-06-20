@@ -8,6 +8,7 @@
 
 /*Resets*/
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: "Roboto", sans-serif;
@@ -28,9 +29,7 @@ a {
 }
 /*This makes the color of the links black*/
 /*Custom styles*/
-img {
-    max-width: 100%;
-}
+
 
 header {
     display: flex;
@@ -82,13 +81,14 @@ header nav a.active:after{
 }
 
 figure {
+
     display:flex;
     margin-bottom:35px;
 }
 
 
 figure img{
-    width:10%;
+    width:5%;
     flex:1;
 }
 
@@ -102,13 +102,14 @@ figure figcaption{
 }
 
 figure figcaption h3{
+    font-size: 36px;
     font-weight: 700;
     margin-bottom: 5px;
 }
 
 main{
     display:flex;
-    
+    padding-right: calc(10% + 56px);
     gap: 10px;
     /* justify-content: center; */
     flex:1; 
@@ -128,6 +129,12 @@ main article{
     padding: 10px 25px;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+main .work-section{
+    flex:1;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 main article.main-article{
@@ -175,7 +182,7 @@ footer{
 }
 @media (min-width: 900px){
     figure{
-        padding: 0 15%;
+        padding: 15px 15% 0;
     }
     figcaption{
         font-size: 2.5rem;
@@ -192,6 +199,7 @@ footer{
     footer{
         padding: 30px 20%;
     }
+
 }
 
 /* <!-- Cascading, so the last class will be applied if there are multiple classes in a single declaration.--> */
